@@ -1,0 +1,28 @@
+﻿@model DojoDachi.Models.DojoPet
+<h1>DojoDachi</h1>
+<div class="boxWrapper">
+    <ul>
+        <li>Fullness: @Model.Fullness</li> |
+        <li>Happiness: @Model.Happiness</li> |
+        <li>Meals: @Model.Meals</li> |
+        <li>Energy: @Model.Energy</li>
+    </ul>
+    <div class="photoWrapper">
+        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="cat pic">
+        <p>@Model.Message</p>
+    </div>
+    @{
+        if(Model.Message != "You killed DojoDachi, You LOST!! Play Again?" && Model.Message != "You WON! Play Again?")
+        {
+            <a class="btn btn-primary" href="/feed">Feed</a>
+            <a class="btn btn-success" href="/play">Play</a>
+            <a class="btn btn-warning" href="/work">Work</a>
+            <a class="btn btn-danger" href="/sleep">Sleep</a>
+        }
+        else 
+        {
+            <a class="btn btn-success" href="/reset">Play Again</a>
+        }
+    }
+    
+</div>
